@@ -1,0 +1,577 @@
+/* =========================================================
+   OUR SERVICES
+   Semua selector dibuat khusus untuk komponen layanan.
+
+   Versi ini:
+   - OUR SERVICES sedikit dinaikkan.
+   - Nama aplikasi berada di atas gambar.
+   - Dot slider berbentuk lingkaran berada di bawah gambar.
+   - Keterangan berbentuk accordion.
+   - Beberapa keterangan dapat dibuka bersamaan.
+   - Warna slider mengikuti biru tua utama home: #073763.
+========================================================= */
+
+.layanan-services {
+    position: relative;
+    padding: 72px 0 120px;
+    background:
+        radial-gradient(
+            circle at 88% 15%,
+            rgba(22, 136, 255, 0.10),
+            transparent 32%
+        ),
+        linear-gradient(
+            135deg,
+            #F4F8FC 0%,
+            #FFFFFF 48%,
+            #EEF6FD 100%
+        );
+    color: #073763;
+    overflow: hidden;
+}
+
+.layanan-services::before {
+    content: "";
+    position: absolute;
+    width: 520px;
+    height: 520px;
+    right: -280px;
+    top: -240px;
+    border-radius: 50%;
+    background: rgba(22, 136, 255, 0.09);
+    filter: blur(100px);
+    pointer-events: none;
+}
+
+.layanan-services::after {
+    content: "";
+    position: absolute;
+    width: 430px;
+    height: 430px;
+    left: -280px;
+    bottom: -280px;
+    border-radius: 50%;
+    background: rgba(105, 199, 255, 0.08);
+    filter: blur(100px);
+    pointer-events: none;
+}
+
+.layanan-services > .container {
+    position: relative;
+    z-index: 2;
+}
+
+.layanan-services__heading {
+    width: 100%;
+    margin-bottom: 28px;
+    text-align: center;
+}
+
+.layanan-services__label {
+    display: inline-block;
+    color: #0B78C8;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    line-height: 1.3;
+    text-transform: uppercase;
+    text-shadow: 0 0 14px rgba(22, 136, 255, 0.15);
+}
+
+.layanan-services__showcase {
+    width: 100%;
+}
+
+.layanan-services__product-name {
+    width: calc(100% - 136px);
+    margin: 0 auto 24px;
+    color: #073763;
+    font-size: clamp(27px, 3vw, 42px);
+    font-weight: 700;
+    line-height: 1.12;
+    letter-spacing: -0.8px;
+    text-align: left;
+    overflow-wrap: anywhere;
+}
+
+.layanan-services__showcase-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.3fr) minmax(350px, 0.7fr);
+    gap: 55px;
+    align-items: start;
+}
+
+.layanan-services__visual,
+.layanan-services__content {
+    min-width: 0;
+}
+
+.layanan-services__content {
+    transform: translateY(-8px);
+}
+
+.layanan-services__image-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    width: 100%;
+    min-width: 0;
+}
+
+.layanan-services__image-frame {
+    position: relative;
+    flex: 1 1 auto;
+    width: 100%;
+    min-width: 0;
+    aspect-ratio: 1080 / 800;
+    overflow: hidden;
+    background: #FFFFFF;
+    border: 1px solid rgba(7, 55, 99, 0.13);
+    box-shadow: 0 18px 50px rgba(7, 55, 99, 0.10);
+    touch-action: pan-y;
+}
+
+.layanan-services__image-slide {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(28px);
+    transition:
+        opacity .38s ease,
+        transform .38s ease,
+        visibility .38s ease;
+}
+
+.layanan-services__image-slide.is-active {
+    z-index: 2;
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+.layanan-services__main-image {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    margin: 0;
+    border: 0;
+    user-select: none;
+}
+
+/*
+   Gambar <= 1080x800 tidak diperbesar.
+   Gambar yang lebih besar memenuhi frame dan dipotong seperti cover.
+*/
+.layanan-services__image-slide.is-natural .layanan-services__main-image {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.layanan-services__image-slide.is-cover .layanan-services__main-image {
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    max-height: none;
+    object-fit: cover;
+    object-position: center;
+}
+
+.layanan-services__slider-button {
+    flex: 0 0 50px;
+    width: 50px;
+    height: 50px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: 1px solid rgba(7, 55, 99, 0.34);
+    border-radius: 50%;
+    background: #073763;
+    color: #FFFFFF;
+    font-family: Arial, sans-serif;
+    font-size: 34px;
+    font-weight: 300;
+    line-height: 1;
+    cursor: pointer;
+    box-shadow: 0 10px 26px rgba(7, 55, 99, 0.18);
+    transition:
+        background .18s ease,
+        transform .18s ease,
+        box-shadow .18s ease;
+}
+
+.layanan-services__slider-button span {
+    display: block;
+    transform: translateY(-1px);
+}
+
+.layanan-services__slider-button:hover {
+    background: #0B4F8A;
+    transform: scale(1.05);
+    box-shadow: 0 13px 30px rgba(7, 55, 99, 0.24);
+}
+
+.layanan-services__slider-button.is-pressed {
+    background: rgba(128, 128, 128, 0.48);
+    border-color: rgba(128, 128, 128, 0.30);
+    transform: scale(.94);
+    box-shadow: 0 7px 18px rgba(80, 80, 80, 0.12);
+}
+
+.layanan-services__slider-button:focus-visible {
+    outline: 3px solid rgba(22, 136, 255, 0.28);
+    outline-offset: 3px;
+}
+
+/* =========================================================
+   DOT SLIDER DI BAWAH GAMBAR
+========================================================= */
+
+.layanan-services__dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    margin-top: 16px;
+}
+
+.layanan-services__dot {
+    width: 9px;
+    height: 9px;
+    flex: 0 0 9px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: #C8CDD2;
+    opacity: 1;
+    cursor: pointer;
+    box-shadow: none;
+    transition:
+        background .22s ease,
+        transform .22s ease,
+        opacity .22s ease;
+}
+
+.layanan-services__dot:hover {
+    background: #8F98A1;
+    transform: scale(1.2);
+}
+
+.layanan-services__dot.is-active {
+    background: #073763;
+    transform: scale(1.18);
+}
+
+.layanan-services__dot:focus-visible {
+    outline: 2px solid rgba(22, 136, 255, 0.34);
+    outline-offset: 3px;
+}
+
+.layanan-services__information {
+    width: 100%;
+}
+
+.layanan-services__product-panel {
+    display: none;
+    width: 100%;
+}
+
+.layanan-services__product-panel.is-active {
+    display: block;
+    animation: layananServicesPanelIn .32s ease both;
+}
+
+@keyframes layananServicesPanelIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================================================
+   ACCORDION INFORMASI
+   Setiap box independen sehingga semua bisa dibuka sekaligus.
+========================================================= */
+
+.layanan-services__information-box {
+    width: 100%;
+    margin-bottom: 10px;
+    border: 1px solid rgba(7, 55, 99, 0.15);
+    background: rgba(255, 255, 255, 0.84);
+    box-shadow: 0 7px 24px rgba(7, 55, 99, 0.05);
+    overflow: hidden;
+    transition:
+        border-color .22s ease,
+        background .22s ease,
+        box-shadow .22s ease;
+}
+
+.layanan-services__information-box:last-child {
+    margin-bottom: 0;
+}
+
+.layanan-services__information-box:hover {
+    border-color: rgba(22, 136, 255, 0.34);
+    background: #FFFFFF;
+    box-shadow: 0 12px 30px rgba(7, 55, 99, 0.08);
+}
+
+.layanan-services__information-box.is-open {
+    border-color: rgba(22, 136, 255, 0.30);
+    background: #FFFFFF;
+    box-shadow: 0 11px 30px rgba(7, 55, 99, 0.08);
+}
+
+.layanan-services__information-toggle {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 18px 20px;
+    border: 0;
+    background: transparent;
+    color: #073763;
+    text-align: left;
+    font: inherit;
+    cursor: pointer;
+}
+
+.layanan-services__information-title {
+    display: block;
+    margin: 0;
+    color: #073763;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+}
+
+.layanan-services__information-toggle:hover .layanan-services__information-title {
+    color: #0B78C8;
+}
+
+.layanan-services__information-toggle:focus-visible {
+    outline: 3px solid rgba(22, 136, 255, 0.20);
+    outline-offset: -3px;
+}
+
+.layanan-services__information-body {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows .28s ease;
+}
+
+.layanan-services__information-box.is-open .layanan-services__information-body {
+    grid-template-rows: 1fr;
+}
+
+.layanan-services__information-inner {
+    min-height: 0;
+    overflow: hidden;
+}
+
+.layanan-services__information-text {
+    min-height: 0;
+    padding: 0 20px;
+    color: #526B80;
+    font-size: 15px;
+    line-height: 1.75;
+    overflow: hidden;
+    overflow-wrap: anywhere;
+}
+
+.layanan-services__information-box.is-open .layanan-services__information-text {
+    padding-top: 1px;
+}
+
+.layanan-services__detail-link {
+    display: inline-flex;
+    align-items: center;
+    align-self: start;
+    justify-self: start;
+    margin: 0;
+    padding: 15px 20px 19px;
+    color: #1688FF;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    transition:
+        color .2s ease,
+        transform .2s ease;
+}
+
+.layanan-services__information-box:not(.is-open) .layanan-services__detail-link {
+    display: none;
+}
+
+.layanan-services__detail-link:hover {
+    color: #073763;
+    transform: translateX(3px);
+}
+
+.layanan-services__empty,
+.layanan-services__empty-content {
+    padding: 45px 25px;
+    border: 1px dashed rgba(7, 55, 99, 0.20);
+    background: rgba(255, 255, 255, 0.70);
+    color: #64748B;
+    text-align: center;
+}
+
+@media (max-width: 1100px) {
+    .layanan-services {
+        padding: 64px 0 100px;
+    }
+
+    .layanan-services__showcase-grid {
+        grid-template-columns: minmax(0, 1.2fr) minmax(300px, .8fr);
+        gap: 35px;
+    }
+
+    .layanan-services__product-name {
+        width: calc(100% - 100px);
+        margin-bottom: 21px;
+    }
+
+    .layanan-services__image-controls {
+        gap: 12px;
+    }
+
+    .layanan-services__slider-button {
+        flex-basis: 44px;
+        width: 44px;
+        height: 44px;
+        font-size: 30px;
+    }
+
+    .layanan-services__content {
+        transform: translateY(-5px);
+    }
+}
+
+@media (max-width: 800px) {
+    .layanan-services {
+        padding: 68px 0 85px;
+    }
+
+    .layanan-services__heading {
+        margin-bottom: 24px;
+    }
+
+    .layanan-services__showcase-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .layanan-services__product-name {
+        width: calc(100% - 100px);
+        margin-bottom: 22px;
+        font-size: clamp(25px, 6vw, 34px);
+    }
+
+    .layanan-services__content {
+        transform: none;
+    }
+
+    .layanan-services__dots {
+        margin-top: 13px;
+    }
+
+    .layanan-services__information-box {
+        margin-bottom: 9px;
+    }
+
+    .layanan-services__information-toggle {
+        padding: 17px 18px;
+    }
+
+    .layanan-services__information-title {
+        font-size: 15px;
+    }
+
+    .layanan-services__information-text {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .layanan-services__detail-link {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+}
+
+@media (max-width: 560px) {
+    .layanan-services__label {
+        font-size: 12px;
+        letter-spacing: 3.5px;
+    }
+
+    .layanan-services__product-name {
+        width: calc(100% - 88px);
+        margin-bottom: 18px;
+    }
+
+    .layanan-services__image-controls {
+        gap: 8px;
+    }
+
+    .layanan-services__slider-button {
+        flex-basis: 40px;
+        width: 40px;
+        height: 40px;
+        font-size: 27px;
+    }
+
+    .layanan-services__image-frame {
+        box-shadow: 0 12px 35px rgba(7, 55, 99, 0.08);
+    }
+
+    .layanan-services__dots {
+        gap: 7px;
+        margin-top: 11px;
+    }
+
+    .layanan-services__dot {
+        width: 8px;
+        height: 8px;
+        flex-basis: 8px;
+    }
+
+    .layanan-services__information-box {
+        margin-bottom: 8px;
+    }
+
+    .layanan-services__information-toggle {
+        padding: 16px;
+    }
+
+    .layanan-services__information-text {
+        padding-left: 16px;
+        padding-right: 16px;
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    .layanan-services__detail-link {
+        padding: 13px 16px 17px;
+        font-size: 11px;
+    }
+}

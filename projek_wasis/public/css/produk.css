@@ -1,0 +1,1305 @@
+/* =========================================================
+   RESET
+========================================================= */
+
+.produk-page,
+.produk-page * {
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   HALAMAN PRODUK
+========================================================= */
+
+.produk-page {
+    padding-top: 82px;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.produk-hero {
+    padding: 65px 0 50px;
+}
+
+
+/* =========================================================
+   BARIS ATAS HERO
+========================================================= */
+
+.produk-hero-topline {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+    margin-bottom: 14px;
+
+}
+
+
+/* =========================================================
+   WASIS TECHNOLOGY
+========================================================= */
+
+.produk-label {
+
+    display: inline-block;
+
+    color: #1683ff;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    letter-spacing: 5px;
+
+}
+
+
+/* =========================================================
+   KEMBALI KE BERANDA
+   POSISI TEPAT DI KANAN WASIS TECHNOLOGY
+========================================================= */
+
+.produk-header-home {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    flex-shrink: 0;
+
+    color: #64748b;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition:
+        color .25s ease,
+        gap .25s ease;
+
+}
+
+
+.produk-header-home span:first-child {
+
+    color: #1683ff;
+
+    font-size: 19px;
+
+    line-height: 1;
+
+}
+
+
+.produk-header-home:hover {
+
+    color: #1683ff;
+
+    gap: 12px;
+
+}
+
+
+/* =========================================================
+   JUDUL
+========================================================= */
+
+.produk-hero h1 {
+
+    margin: 0 0 20px;
+
+    color: #073763;
+
+    font-size:
+        clamp(48px, 6vw, 82px);
+
+    line-height: .96;
+
+    letter-spacing: -4px;
+
+}
+
+
+/* =========================================================
+   DESKRIPSI
+========================================================= */
+
+.produk-hero p {
+
+    max-width: 760px;
+
+    margin: 0;
+
+    color: #64748b;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.produk-content-section {
+
+    padding: 25px 0 100px;
+
+}
+
+
+/* =========================================================
+   LAYOUT 3 KOLOM
+========================================================= */
+
+.produk-layout {
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(330px, 1.15fr)
+        minmax(330px, 1fr)
+        minmax(300px, .9fr);
+
+    gap: 68px;
+
+    align-items: start;
+
+}
+
+
+/* =========================================================
+   GAMBAR
+========================================================= */
+
+.produk-image-column {
+
+    min-width: 0;
+
+}
+
+
+.produk-image-wrapper {
+
+    position: relative;
+
+    width: 100%;
+
+}
+
+
+/* checkbox */
+.produk-image-checkbox {
+
+    position: absolute;
+
+    width: 1px;
+
+    height: 1px;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+}
+
+
+/* area gambar */
+.produk-image-trigger {
+
+    position: relative;
+
+    display: block;
+
+    width: 100%;
+
+    cursor: zoom-in;
+
+}
+
+
+/* =========================================================
+   GAMBAR UTAMA
+   RASIO 16:9
+   IDEAL 1920x1080
+========================================================= */
+
+.produk-detail-image {
+
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+
+    aspect-ratio: 16 / 9;
+
+    object-fit: contain;
+
+    object-position: center;
+
+    background: #f1f5f9;
+
+    border: 1px solid rgba(7, 55, 99, .15);
+
+    border-radius: 0;
+
+    box-shadow:
+        0 18px 45px rgba(7, 55, 99, .08);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+
+}
+
+
+.produk-image-trigger:hover .produk-detail-image {
+
+    transform: scale(1.015);
+
+    box-shadow:
+        0 25px 60px rgba(7, 55, 99, .14);
+
+}
+
+
+/* =========================================================
+   INFO PRODUK
+========================================================= */
+
+.produk-image-info {
+
+    padding-top: 27px;
+
+}
+
+
+.produk-number {
+
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: #1683ff;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+}
+
+
+.produk-image-info h2 {
+
+    margin: 0 0 15px;
+
+    color: #073763;
+
+    font-size:
+        clamp(28px, 3vw, 42px);
+
+    line-height: 1.05;
+
+    letter-spacing: -1.8px;
+
+}
+
+
+.produk-image-info p {
+
+    margin: 0;
+
+    color: #64748b;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+
+}
+
+
+
+.produk-image-info .produk-back-bottom-link {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-top: 90px;
+
+    color: #64748b;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition:
+        color .25s ease,
+        gap .25s ease;
+
+}
+
+
+.produk-image-info .produk-back-bottom-link span:first-child {
+
+    color: #1683ff;
+
+    font-size: 19px;
+
+    line-height: 1;
+
+}
+
+
+.produk-image-info .produk-back-bottom-link:hover {
+
+    color: #1683ff;
+
+    gap: 12px;
+
+}
+
+
+
+/* =========================================================
+   FUNGSI / MANFAAT / DAMPAK
+========================================================= */
+
+.produk-information {
+
+    min-width: 0;
+
+    border-top:
+        1px solid rgba(7, 55, 99, .16);
+
+}
+
+
+.produk-info-section {
+
+    display: grid;
+
+    grid-template-columns: 44px 1fr;
+
+    gap: 20px;
+
+    padding: 29px 0;
+
+    border-bottom:
+        1px solid rgba(7, 55, 99, .14);
+
+}
+
+
+.produk-info-number {
+
+    color: #1683ff;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+}
+
+
+.produk-info-section h3 {
+
+    margin: 0 0 10px;
+
+    color: #073763;
+
+    font-size: 22px;
+
+    font-weight: 700;
+
+    letter-spacing: .2px;
+
+}
+
+
+.produk-info-section p {
+
+    margin: 0;
+
+    color: #526b83;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+
+}
+
+
+/* =========================================================
+   PILIH APLIKASI
+========================================================= */
+
+.produk-app-column {
+
+    min-width: 0;
+
+    position: sticky;
+
+    top: 105px;
+
+}
+
+
+.produk-app-header {
+
+    padding-bottom: 18px;
+
+    border-bottom:
+        1px solid rgba(7, 55, 99, .14);
+
+}
+
+
+.produk-app-header span {
+
+    color: #1683ff;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 4px;
+
+}
+
+
+/* =========================================================
+   LIST SCROLL
+========================================================= */
+
+.produk-app-list {
+
+    max-height: 510px;
+
+    overflow-y: auto;
+
+    overflow-x: hidden;
+
+    scrollbar-width: thin;
+
+    scrollbar-color:
+        rgba(22, 131, 255, .55)
+        rgba(7, 55, 99, .06);
+
+}
+
+
+/* chrome */
+.produk-app-list::-webkit-scrollbar {
+
+    width: 5px;
+
+}
+
+
+.produk-app-list::-webkit-scrollbar-track {
+
+    background:
+        rgba(7, 55, 99, .05);
+
+}
+
+
+.produk-app-list::-webkit-scrollbar-thumb {
+
+    background:
+        rgba(22, 131, 255, .55);
+
+    border-radius: 0;
+
+}
+
+
+/* =========================================================
+   ITEM APLIKASI
+========================================================= */
+
+.produk-app-item {
+
+    display: grid;
+
+    grid-template-columns:
+        40px
+        minmax(0, 1fr)
+        32px;
+
+    gap: 12px;
+
+    align-items: center;
+
+    min-height: 96px;
+
+    padding: 18px 10px 18px 4px;
+
+    color: #526b83;
+
+    text-decoration: none;
+
+    border-bottom:
+        1px solid rgba(7, 55, 99, .14);
+
+    transition:
+        background .25s ease,
+        color .25s ease,
+        padding-left .25s ease;
+
+}
+
+
+/* nomor */
+.produk-app-number {
+
+    color: #1683ff;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+}
+
+
+/* nama */
+.produk-app-name {
+
+    min-width: 0;
+
+    color: #526b83;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    line-height: 1.45;
+
+}
+
+
+/* panah */
+.produk-app-arrow {
+
+    color: #1683ff;
+
+    font-size: 24px;
+
+    text-align: right;
+
+    opacity: 0;
+
+    transform: translateX(-5px);
+
+    transition:
+        opacity .25s ease,
+        transform .25s ease;
+
+}
+
+
+/* hover */
+.produk-app-item:hover {
+
+    padding-left: 14px;
+
+    background:
+        rgba(22, 131, 255, .045);
+
+}
+
+
+.produk-app-item:hover .produk-app-name {
+
+    color: #073763;
+
+}
+
+
+.produk-app-item:hover .produk-app-arrow {
+
+    opacity: 1;
+
+    transform: translateX(0);
+
+}
+
+
+/* =========================================================
+   AKTIF
+========================================================= */
+
+.produk-app-item.active {
+
+    padding-left: 14px;
+
+    background:
+        rgba(22, 131, 255, .075);
+
+    box-shadow:
+        inset 3px 0 0 #1683ff;
+
+}
+
+
+.produk-app-item.active .produk-app-name {
+
+    color: #073763;
+
+}
+
+
+.produk-app-item.active .produk-app-arrow {
+
+    opacity: 1;
+
+    transform: translateX(0);
+
+}
+
+
+/* =========================================================
+   LIGHTBOX
+========================================================= */
+
+.produk-lightbox {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 35px;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition:
+        opacity .25s ease,
+        visibility .25s ease;
+
+}
+
+
+/* background */
+.produk-lightbox-background {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        rgba(4, 18, 31, .88);
+
+    cursor: zoom-out;
+
+}
+
+
+/* kontainer */
+.produk-lightbox-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width:
+        min(1450px, 94vw);
+
+    max-height: 92vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+/* gambar besar */
+.produk-lightbox-content img {
+
+    display: block;
+
+    max-width: 100%;
+
+    max-height: 88vh;
+
+    width: auto;
+
+    height: auto;
+
+    object-fit: contain;
+
+    border-radius: 0;
+
+    box-shadow:
+        0 30px 100px rgba(0, 0, 0, .35);
+
+}
+
+
+/* close */
+.produk-lightbox-close {
+
+    position: absolute;
+
+    top: -18px;
+
+    right: -18px;
+
+    z-index: 3;
+
+    display: flex;
+
+    width: 45px;
+
+    height: 45px;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: #ffffff;
+
+    background: #073763;
+
+    border:
+        1px solid rgba(255, 255, 255, .18);
+
+    font-size: 29px;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition:
+        background .2s ease,
+        transform .2s ease;
+
+}
+
+
+.produk-lightbox-close:hover {
+
+    background: #1683ff;
+
+    transform: scale(1.05);
+
+}
+
+
+/* checkbox checked */
+.produk-image-checkbox:checked
+~ .produk-lightbox {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+
+}
+
+
+/* =========================================================
+   DESKTOP
+   GESER KOLOM TENGAH & KANAN KE KANAN
+========================================================= */
+
+@media (min-width: 1101px) {
+
+    .produk-information {
+
+        padding-left: 12px;
+
+    }
+
+
+    .produk-app-column {
+
+        padding-left: 12px;
+
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .produk-layout {
+
+        grid-template-columns:
+            1fr 1fr;
+
+        gap: 45px;
+
+    }
+
+
+    .produk-information {
+
+        padding-left: 0;
+
+    }
+
+
+    .produk-app-column {
+
+        grid-column: 1 / -1;
+
+        position: relative;
+
+        top: auto;
+
+        padding-left: 0;
+
+    }
+
+
+    .produk-app-list {
+
+        max-height: 410px;
+
+    }
+
+}
+
+
+/* =========================================================
+   TABLET KECIL
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .produk-page {
+
+        padding-top: 70px;
+
+    }
+
+
+    .produk-hero {
+
+        padding: 55px 0 40px;
+
+    }
+
+
+    .produk-hero-topline {
+
+        align-items: center;
+
+        gap: 20px;
+
+    }
+
+
+    .produk-hero h1 {
+
+        font-size:
+            clamp(42px, 10vw, 65px);
+
+        letter-spacing: -3px;
+
+    }
+
+
+    .produk-layout {
+
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+
+    }
+
+
+    .produk-app-column {
+
+        grid-column: auto;
+
+    }
+
+
+    .produk-app-list {
+
+        max-height: 420px;
+
+    }
+
+
+    .produk-detail-image {
+
+        width: 100%;
+
+        aspect-ratio: 16 / 9;
+
+    }
+
+}
+
+
+/* =========================================================
+   HP
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .produk-page {
+
+        padding-top: 60px;
+
+    }
+
+
+    .produk-hero {
+
+        padding: 45px 0 35px;
+
+    }
+
+
+    .produk-hero-topline {
+
+        flex-direction: row;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        gap: 15px;
+
+    }
+
+
+    .produk-label {
+
+        font-size: 10px;
+
+        letter-spacing: 3px;
+
+    }
+
+
+    .produk-header-home {
+
+        font-size: 11px;
+
+        gap: 5px;
+
+    }
+
+
+    .produk-header-home span:first-child {
+
+        font-size: 16px;
+
+    }
+
+
+    .produk-hero h1 {
+
+        margin-bottom: 18px;
+
+        font-size: 43px;
+
+        letter-spacing: -2px;
+
+    }
+
+
+    .produk-hero p {
+
+        font-size: 15px;
+
+        line-height: 1.7;
+
+    }
+
+
+    .produk-content-section {
+
+        padding-bottom: 70px;
+
+    }
+
+
+    .produk-info-section {
+
+        grid-template-columns:
+            34px 1fr;
+
+        gap: 12px;
+
+        padding: 23px 0;
+
+    }
+
+
+    .produk-info-section h3 {
+
+        font-size: 19px;
+
+    }
+
+
+    .produk-info-section p {
+
+        font-size: 14px;
+
+    }
+
+
+    .produk-image-info h2 {
+
+        font-size: 32px;
+
+    }
+
+
+    .produk-app-item {
+
+        grid-template-columns:
+            32px
+            minmax(0, 1fr)
+            26px;
+
+        gap: 8px;
+
+        min-height: 82px;
+
+        padding: 15px 7px;
+
+    }
+
+
+    .produk-app-item:hover,
+    .produk-app-item.active {
+
+        padding-left: 11px;
+
+    }
+
+
+    .produk-app-name {
+
+        font-size: 14px;
+
+    }
+
+
+    .produk-app-arrow {
+
+        font-size: 20px;
+
+    }
+
+
+    .produk-lightbox {
+
+        padding: 20px;
+
+    }
+
+
+    .produk-lightbox-close {
+
+        top: -12px;
+
+        right: -8px;
+
+        width: 40px;
+
+        height: 40px;
+
+        font-size: 25px;
+
+    }
+
+
+    .produk-lightbox-content img {
+
+        max-height: 82vh;
+
+    }
+
+}
+
+
+/* =========================================================
+   HP SANGAT KECIL
+========================================================= */
+
+@media (max-width: 420px) {
+
+    .produk-hero-topline {
+
+        flex-wrap: wrap;
+
+        align-items: center;
+
+    }
+
+
+    .produk-label {
+
+        font-size: 9px;
+
+        letter-spacing: 2.5px;
+
+    }
+
+
+    .produk-header-home {
+
+        font-size: 10px;
+
+    }
+
+
+    .produk-hero h1 {
+
+        font-size: 37px;
+
+    }
+
+
+    .produk-app-header span {
+
+        font-size: 11px;
+
+        letter-spacing: 3px;
+
+    }
+
+
+    .produk-app-list {
+
+        max-height: 390px;
+
+    }
+
+}
+
+/* =========================================================
+   PERBAIKAN POSISI HERO
+   WASIS TECHNOLOGY -> JUDUL -> DESKRIPSI DIBUAT RAPAT
+========================================================= */
+
+.produk-hero {
+    padding-top: 65px !important;
+    padding-bottom: 0 !important;
+}
+
+.produk-hero-topline {
+    margin-bottom: 0 !important;
+}
+
+.produk-hero h1,
+.produk-hero h1 * {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.produk-hero h1 {
+    line-height: .96 !important;
+}
+
+.produk-hero-description {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    line-height: 1.4 !important;
+}
+
+.produk-hero-description p,
+.produk-hero-description div,
+.produk-hero-description span {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.produk-hero-description p:empty,
+.produk-hero-description div:empty {
+    display: none !important;
+}
+
+.produk-hero-description > p:has(> br:only-child),
+.produk-hero-description > div:has(> br:only-child) {
+    display: none !important;
+}
+
+.produk-content-section {
+    padding-top: 25px !important;
+}
+
+@media (max-width: 800px) {
+    .produk-hero {
+        padding-top: 55px !important;
+        padding-bottom: 0 !important;
+    }
+
+    .produk-hero h1,
+    .produk-hero h1 * {
+        margin-bottom: 0 !important;
+    }
+
+    .produk-hero-description {
+        margin-top: 0 !important;
+    }
+}
+
+@media (max-width: 600px) {
+    .produk-hero {
+        padding-top: 45px !important;
+        padding-bottom: 0 !important;
+    }
+}
